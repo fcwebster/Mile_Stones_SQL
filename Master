@@ -1,0 +1,30 @@
+CREATE TABLE Mile_Stones(ID INTEGER PRIMARY KEY AUTOINCREMENT,
+name_required TEXT,
+activity TEXT,
+time_invest INTEGER,
+money_invest INTEGER,
+matter_points INTEGER);
+
+INSERT INTO Mile_Stones VALUES (1,"John", "save $1000", 1,1000, 4 );
+INSERT INTO Mile_Stones VALUES (2,"Eulanda", "loose 15 pounds", .5, 0, 5);
+INSERT INTO Mile_Stones VALUES (3, "Family", "save $1000", 1, 1000, 5);
+INSERT INTO Mile_Stones VALUES (4, "Bill", "loose 15 pounds", .25, 0, 3);
+INSERT INTO Mile_Stones VALUES (5, "John", "learn a foreign language", .5, 100, 4);
+INSERT INTO Mile_Stones VALUES (6, "Family", "learn a foreign language",1,250,5);
+INSERT INTO Mile_Stones VALUES (7, "Brenda", "save $1000", 1,1000,3);
+INSERT INTO Mile_Stones VALUES (8,"John", "train for a marathon",.25,0,5);
+INSERT INTO Mile_Stones VALUES (9,"Eulanda", "loose 15 pounds", .25,0,5);
+INSERT INTO Mile_Stones VALUES (10,"Bill", "save $1000", 1, 1000, 4);
+INSERT INTO Mile_Stones VALUES (11,"John", "learn a foreign language", .25, 125, 5);
+INSERT INTO Mile_Stones VALUES (12,"Mary", "train for a marathon",.5,60,3);
+INSERT INTO Mile_Stones VALUES (13,"Sarah", "save $1000", .75, 1000, 5);
+INSERT INTO Mile_Stones VALUES (14, "Jerome", "loose 15 pounds", .5, 100, 3);
+INSERT INTO Mile_Stones VALUES (15,"Joe", "learn a foreign language", .25, 15, 2);
+INSERT INTO Mile_Stones VALUES (16,"Anita", "save $1000", .25, 1000, 4);
+INSERT INTO Mile_Stones VALUES (17,"Family", "loose 15 pounds", .75, 0, 5);
+INSERT INTO Mile_Stones VALUES (18, "Eulanda", "save $1000",1 , 1000 , 4);
+INSERT INTO Mile_Stones VALUES (19, "Brenda",  "learn a foreign language", .75, 25, 5);
+INSERT INTO Mile_Stones VALUES (20, "Peaches", "save $1000", .5, 1000, 5);
+SELECT name_required, ROUND (time_invest*100) AS Percent_Of_Year FROM Mile_Stones GROUP BY name_required;
+Select COUNT (*), ROUND (time_invest*100) AS percent_of_year FROM Mile_Stones GROUP BY percent_of_year HAVING time_invest >.5;
+SELECT name_required, ROUND (time_invest*100) AS Percent_Of_Year FROM Mile_Stones ORDER BY name_required AND percent_of_year;
